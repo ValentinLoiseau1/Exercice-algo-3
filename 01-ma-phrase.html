@@ -54,8 +54,36 @@
 
 <script type="text/javascript">
 
-    function analyze() {
-        // CODE HERE !
+    function analyse() {
+
+        let phraseValue = document.getElementById("sentence").value;
+
+        //Je crée un tableau ou je rentre les parametres de ce dernier corréspondant a la phrase rentré par le client
+        let myArray = [ phraseValue[4], phraseValue.length, phraseValue.substring(0, 3), phraseValue.substring(phraseValue.length-3)];
+
+        console.log("sentence : " + myArray[0]); // Le nombres de caractére dans ma phrase
+        console.log(phraseValue.substring(0, 3));//Les 3 premiers caractères
+        console.log(phraseValue.substring(phraseValue.length-3)); // Les 3 derniers caractéres
+        console.log(phraseValue[4]);
+
+        //Je crée un message personnaliser suivis de l'appel des paramétres du tableau.
+        let messageCaractére = "Le nombre de caractére de cette phrase est de : " + myArray[1] +"\n"; // +"\n" Sert a sauter un ligne au seint d'une même alerte.
+        let message3Premiers = "Les trois premiers caractéres de cette phrase sont : " + myArray[2]+"\n";
+        let message3Derniers = "Les trois derniers caractéres de cette phrase sont : " + myArray[3]+"\n";
+        let messageLe5 = "Le cinquiéme caractére de cette phrase est : " + myArray[0];
+        let messageError = "Veuillez renseignez au moin 5 caractéres";
+
+        //L'alerte :
+        //alert(messageCaractére + message3Premiers + message3Derniers + messageLe5);
+
+        if(phraseValue.length > 5)
+        {
+            alert(messageCaractére + message3Premiers + message3Derniers + messageLe5);
+        }
+        else
+        {
+            alert(messageError); 
+        }
     }
 
 </script>

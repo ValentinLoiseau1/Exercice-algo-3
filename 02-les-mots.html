@@ -51,10 +51,32 @@
     </button>
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
+
 
     function countWords() {
-        // CODE HERE ! 
+
+        let maPhraseValue = document.getElementById("sentence").value;
+        let monNombreDeMots = 0;
+
+        if(maPhraseValue.charAt(0) !== " " ){//chartAt permet de recupérer le caractére à la position de i
+            monNombreDeMots++; // Incrémente de 1 monNombreDeMots a chaque fois que i = " "
+        }
+
+
+        // Fait une boucle tant que le compteur ne dépasse pas la taille de la chaine de caractére -1
+        for(let i = 1; i < maPhraseValue.length ; i++) {
+            if(maPhraseValue.charAt(i) !== " " && maPhraseValue.charAt(i-1) === " "){
+                monNombreDeMots++; 
+            }
+
+            //if(maPhraseValue.charAt(i) === " "){ // exercice 1
+               // monNombreDeMots++ ; 
+           // }
+        }
+
+        console.log(maPhraseValue);
+        console.log("Les nombres de mots de cette phrase est de : " + monNombreDeMots);
     }
 
 </script>
