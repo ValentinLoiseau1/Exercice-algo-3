@@ -31,7 +31,7 @@
         <p class="text-success">average (notes) affichera 11.21</p>
     </div>
 
-    <button type="button" class="btn btn-primary" onclick="average(notes)">
+    <button type="button" class="btn btn-primary" onclick="average(tableau)">
         Calculer la moyenne
     </button>
 </div>
@@ -39,35 +39,53 @@
 <script type="text/javascript">
 
     // Tableau des notes obtenues
-    const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
+    const tableau = [8.75, 14, 13, 5.5, 9, 17, 11.25];
     let monNombreDeNotes = 0;
     let additionDesNotes = 0;
     let sommes =0;
+    let resultat = 0;
     /*
      * Ici le commentaire sur la fonction average...
      */
 
     function average(noteArray) {
 
-        /*  for(let i of notes){
+    /*  for(let i of tableau){ METHODE FOR OF
 
-            additionDesNotes += i; //additionne les valeurs de mon tableau
+        additionDesNotes += i; //additionne les valeurs de mon tableau
         }
 
-        monNombreDeNotes = additionDesNotes/notes.length; //Attribu a monNombreDeNotes , l'addition des valeurs recupéré ci-dessus diviser par le nombre d'élément présent dans mon tableau.
+        monNombreDeNotes = additionDesNotes/tableau.length; //Attribu a monNombreDeNotes , l'addition des valeurs recupéré ci-dessus diviser par le nombre d'élément présent dans mon tableau.
         monNombreDeNotes = monNombreDeNotes.toFixed(2);  //Arrondie la moyenne a deux chiffres aprés la virgule.
         
         console.log(monNombreDeNotes);
         console.log(additionDesNotes);
-       */
-      
-    notes.forEach ((element) => { //Récupére les élements de notes
+    */
+    
+    /* METHODE RECENTE DU FOR EACH 
+        tableau.forEach ((element) => { //Récupére les élements de notes
         sommes += element; //Addition le contenu du tableau
-    })
+        })
 
-    sommes = sommes/notes.length;// divise la totalité du tableau par le nombre d'élement présent dans ce dernier.
+        sommes = sommes/notes.length;// divise la totalité du tableau par le nombre d'élement présent dans ce dernier.
 
-    console.log(sommes.toFixed(2));
+        console.log(sommes.toFixed(2));
+    */
+
+    //  METHODE CLASSIQUE DU FOR EACH
+        tableau.forEach(function (element) {
+        
+        sommes += element;
+        resultat = sommes /tableau.length;
+    
+        });
+
+        console.log(resultat.toFixed(2));
+
+    
+
+
+
 
     }
     
